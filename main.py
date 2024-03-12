@@ -11,7 +11,11 @@ items.append({
   'price': 32.32
 })
 
-items.append({'name': 'Burger King Foot Lettuce', 'quantity': 15, 'price': 0.01})
+items.append({
+  'name': 'Burger King Foot Lettuce', 
+  'quantity': 15, 
+  'price': 0.01,
+})
 
 # VERY EPIC GUIDE ON USING DICTIONARIES
 
@@ -29,6 +33,7 @@ def viewList():
 Item: {i['name']}
 Quantity: {i['quantity']}
 Price: ${i['price']}
+Total Cost: ${i['quantity'] * i['price']}
     ''')
 
 def removeItem(item):
