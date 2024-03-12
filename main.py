@@ -5,7 +5,12 @@ items = []
 
 # TEST LIST
 
-items.append({'name': 'Fortnite Burger', 'quantity': 9001, 'price': 32.32})
+items.append({
+  'name': 'Fortnite Burger', 
+  'quantity': 9001, 
+  'price': 32.32
+})
+
 items.append({'name': 'Burger King Foot Lettuce', 'quantity': 15, 'price': 0.01})
 
 # VERY EPIC GUIDE ON USING DICTIONARIES
@@ -43,7 +48,15 @@ SHOPPING LIST
     except ValueError:
       print('that aint an option bubba')
     if choice == 1: # ADD ITEM TO LiST
-      print('real add???')
+      name = input('what\'s the item name??')
+      quantity = int(input('how many are you buying?'))
+      price = float(input('how much does it cost in dollars?'))
+
+      items.append({
+        'name': name, 
+        'quantity': quantity, 
+        'price': price,
+      })
     elif choice == 2: # REMOVE ITEM FROM LIST
       remove = int(input('which item to remove????'))
       removeItem(remove)
