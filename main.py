@@ -1,9 +1,11 @@
+# <-------PROJECT SETUP------->
 global choice
 choice = 0
 stopProject = 0
 items = []
 
-# TEST LIST
+
+# <-------SAMPLE ITEMS------->
 
 # items.append({
 #   'name': 'Fortnite Burger', 
@@ -17,7 +19,7 @@ items = []
 #   'price': 0.01,
 # })
 
-# VERY EPIC GUIDE ON USING DICTIONARIES
+# <-------VERY EPIC GUIDE ON USING DICTIONARIES------->
 
 # def addItem(name, quantity, price):
 #     items.append({'name': name, 'quantity': quantity, 'price': price})
@@ -27,7 +29,9 @@ items = []
 # print(items)
 # print(items[1]['name']) -----------> returns names of the 2nd items 
 
+# <-------FUNCTIONS------->
 def viewList():
+  listTotalCost = 0
   for i in items:
     print(f'''
 Item: {i['name']}
@@ -35,6 +39,9 @@ Quantity: {i['quantity']}
 Price: ${'{:.2f}'.format(i['price'])}
 Total Cost: ${'{:.2f}'.format(i['quantity'] * i['price'])}
       ''')
+    listTotalCost += i['quantity'] * i['price']
+  print('$' + str('{:.2f}'.format(listTotalCost)))
+  
   if len(items) < 1:
     print('\nShopping list is empty!')
 
@@ -43,13 +50,16 @@ def removeItem(item):
     items.pop(item)
   except IndexError:
     print('\nNo item in this position.')
+    
 def addItem(name, quantity, price):  
   items.append({
     'name': name, 
     'quantity': quantity, 
     'price': price,
   })
-  
+
+# <-------NAVIGATION-------> 
+
 def navigate(choice):
   if choice == 0:
     try:
